@@ -40,7 +40,7 @@ SELECT
  total_income,
  total_refund,
  total_income - total_refund AS net_income
-FROM Income_Refund;```
+FROM Income_Refund;
 
 **Проект выполнен в Google Data Studio:**
 
