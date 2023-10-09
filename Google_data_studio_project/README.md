@@ -20,6 +20,7 @@ Cобрать дашборд, который покажет продактам �
 
 **SQL запрос**
 
+```sql
 WITH Income_Refund AS (
  SELECT
    product,
@@ -39,7 +40,7 @@ SELECT
  total_income,
  total_refund,
  total_income - total_refund AS net_income
-FROM Income_Refund;
+FROM Income_Refund;```
 
 **Проект выполнен в Google Data Studio:**
 
