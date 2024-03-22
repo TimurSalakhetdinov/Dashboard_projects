@@ -20,7 +20,7 @@ Developed a solution for scraping data from the LinkedIn website using Selenium,
 
 **Project completed in Tableau:**
 
-Link to the project - <https://public.tableau.com/shared/8BDS8T8BR?:display_count=n&:origin=viz_share_link>
+Link to the project - <https://public.tableau.com/shared/W4SCSPCSH?:display_count=n&:origin=viz_share_link>
 
 [**2. Analysis of vacancies on HeadHunter**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/HH_vacancies_analysis)
 

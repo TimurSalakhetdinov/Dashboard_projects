@@ -10,7 +10,7 @@
 
 Developed a solution for scraping data from the LinkedIn website using Selenium, transformed the data using BeautifulSoup and prepared it for visualization, created a dashboard in Tableau that helped identify in-demand skills and the competitive landscape in the field of Data Analytics.
 
-Dashboard link: <https://public.tableau.com/shared/8BDS8T8BR?:display_count=n&:origin=viz_share_link>
+Dashboard link: <https://public.tableau.com/shared/W4SCSPCSH?:display_count=n&:origin=viz_share_link>
 
 *Skills*
 
