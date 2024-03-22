@@ -1,66 +1,66 @@
-# Дащборд проекты в Tableau, Google Data Studio и DataLens
+# Dashboard projects in Tableau, Google Data Studio and DataLens
 
-Данный репозиторий содержит проекты, которые я выполнил в различных дашборд системах
+This repository contains projects that I have completed in various dashboard systems
 
-**Перечень проектов:**
+**List of projects:**
 
-[**1. Анализ вакансий на LinkedIn**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/Linkedin_vacancies_analysis)
+[**1. Analysis of vacancies on LinkedIn**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/Linkedin_vacancies_analysis)
 
-**Задача проекта**
+**Project Objective**
 
-- Провести анализ вакансий аналитиков данных в LinkedIn.
-- Проанализировать полученный CSV-файл с помощью BS 4.
-- Визуализировать информацию о рынке труда для аналитиков данных в Европе. 
+- Conduct an analysis of data analyst vacancies on LinkedIn.
+- Analyze the resulting CSV file using BS 4.
+- Visualize job market information for data analysts in Europe.
 
-**Описание проекта**
+**Project Description**
 
-Разработал решение для парсинга данных с сайта LinkedIn с помощью Selenium, преобразовал данные при помощи BeautifulSoup и подготовил их для визуализации, создал дашборд в Tableau, который помог определить навыки, пользующиеся спросом, и конкурентную среду в области Анализа данных.
+Developed a solution for scraping data from the LinkedIn website using Selenium, transformed the data using BeautifulSoup and prepared it for visualization, created a dashboard in Tableau that helped identify in-demand skills and the competitive landscape in the field of Data Analytics.
 
-**Навыки:** BeautifulSoup, Анализ данных, Tableau
+**Skills:** BeautifulSoup, Data Analysis, Tableau
 
-**Проект выполнен в Tableau:**
+**Project completed in Tableau:**
 
-Ссылка на проект - <https://public.tableau.com/shared/8BDS8T8BR?:display_count=n&:origin=viz_share_link>
+Link to the project - <https://public.tableau.com/shared/8BDS8T8BR?:display_count=n&:origin=viz_share_link>
 
-[**2. Анализ вакансий на HeadHunter**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/HH_vacancies_analysis)
+[**2. Analysis of vacancies on HeadHunter**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/HH_vacancies_analysis)
 
-**Задача проекта**
+**Project Objective**
 
-Построить дашборд в DataLens для анализа вакансий с сайтов hh.ru, vseti.ru, Хабр Карьера - и для просмотра актуальных предложений по вакансиям аналитиков данных и дата сайентистов для специалистов начального уровня подготовки.
+Build a dashboard in DataLens to analyze vacancies from the sites hh.ru, vseti.ru, Habr Career - and to view current offers for vacancies for data analysts and data scientists for entry-level specialists.
 
-**Описание проекта**
+**Project Description**
 
-Собрать аналитику по всем вакансиям и по каждому ресурсу с вакансиями:
+Collect analytics for all vacancies and for each resource with vacancies:
 
-- Индикаторы общего числа вакансий в базе, общего количества компаний- работодателей;
-- Список актуальных вакансий по специальностям;
-- Динамику количества вакансий;
-- Общее число джун-вакансий за последние 30 дней, за последнюю неделю, за вчера, за сегодня;
-- Топ компаний-работодателей, топ отраслей, топ городов, топ специальностей по количеству вакансий;
-- Среднюю зарплату и её динамику;
-- Список наиболее востребованных навыков;
-- Географию размещения вакансий (города).
+- Indicators of the total number of vacancies in the database, the total number of employer companies;
+- List of current vacancies by specialty;
+- Dynamics of the number of vacancies;
+- The total number of June vacancies for the last 30 days, for the last week, for yesterday, for today;
+- Top employer companies, top industries, top cities, top specialties by number of vacancies;
+- Average salary and its dynamics;
+- List of the most in-demand skills;
+- Geography of vacancy placement (city).
 
-**Навыки:** Data Analysis, Yandex DataLens
+**Skills:** Data Analysis, Yandex DataLens
 
-**Проект выполнен в DataLens:**
+**Project completed in DataLens:**
 
-Ссылка на проект - <https://datalens.yandex/mhagiprk7a9ib>
+Link to the project - <https://datalens.yandex/mhagiprk7a9ib>
 
-[**3. Создание дашборда продаж с возвратами**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/Google_data_studio_project)
+[**3. Creating a sales dashboard with returns**](https://github.com/TimurSalakhetdinov/Dashboard_projects/tree/main/Google_data_studio_project)
 
-**Задача проекта**
+**Project Objective**
 
-Cобрать дашборд, который покажет продактам динамику и текущую ситуацию по возвратам в контексте общей ситуации по продуктам.
+Collect a dashboard that will show products the dynamics and current situation regarding returns in the context of the general situation for products.
 
-**Описание проекта**
+**Project Description**
 
-У команды продукта новая квартальная задача: работа с возвратами. Чтобы вы могли вывести аналитику возвратов в дашборды, команда IT выкатила в релизе новое поле в таблице с заказами (инвойсами) -- тип заказа (type).
+The product team has a new quarterly task: working with returns. So that you can display returns analytics in dashboards, the IT team rolled out a new field in the table with orders (invoices) - order type (type).
 
-Теперь там есть не только приход (income), но и возвраты (refund). При этом возвратные инвойсы – это не статус старого заказа, а новые заказы, которые дважды в неделю добавляет вручную отдел продаж и теперь в дашбордах если просто выводить сумму по выручке без фильтра по типу заказа, то каждый заказ, по которому был проведен возврат, дублируется возвратным инвойсом и у каждого инвойса свой invoice_id.
+Now there is not only income, but also returns. At the same time, return invoices are not the status of an old order, but new orders, which are manually added by the sales department twice a week, and now in dashboards, if you simply display the amount of revenue without a filter by order type, then each order for which a return was made is duplicated return invoice and each invoice has its own invoice_id.
 
-**Навыки:** Data Analysis, BigQuery, Google Data Studio
+**Skills:** Data Analysis, BigQuery, Google Data Studio
 
-**Проект выполнен в Looker Studio:**
+**Project done in Looker Studio:**
 
-Ссылка на проект - <https://lookerstudio.google.com/reporting/793631d5-0da9-4246-9f09-fd7fcc2d0b2c>
+Link to the project - <https://lookerstudio.google.com/reporting/793631d5-0da9-4246-9f09-fd7fcc2d0b2c>

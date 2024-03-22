@@ -1,28 +1,28 @@
-# Анализ вакансий для аналитиков данных в HH, Habr и vseti
+# Analysis of vacancies for data analysts in HH, Habr and vseti
 
-**Цель проекта:** 
+**Objective of the project:**
 
-Построить дашборд в DataLens для анализа вакансий с сайтов hh.ru, vseti.ru, Хабр Карьера - и для просмотра актуальных предложений по вакансиям аналитиков данных и дата сайентистов для специалистов начального уровня подготовки.
+Build a dashboard in DataLens to analyze vacancies from the sites hh.ru, vseti.ru, Habr Career - and to view current offers for vacancies for data analysts and data scientists for entry-level specialists.
  
-**Исходные данные:**
+**Initial data:**
 
-Данные о вакансиях сохраняются в базе данных ClickHouse. Мы имеем доступ для подключения к базе - эти доступы также будут доступами для создания подключения в DataLens.
+Job vacancy data is stored in the ClickHouse database. We have access to connect to the database - these accesses will also be access to create a connection in DataLens.
 
-**Задача проекта:**
+**Project Objective:**
 
-Аналитику по всем вакансиям и по каждому ресурсу с вакансиями:
-- Индикаторы общего числа вакансий в базе, общего количества компаний-
-работодателей;
-- Список актуальных вакансий по специальностям;
-- Динамику количества вакансий;
-- Общее число джун-вакансий за последние 30 дней, за последнюю неделю, за
-вчера, за сегодня;
-- Топ компаний-работодателей, топ отраслей, топ городов, топ специальностей
-по количеству вакансий;
-- Среднюю зарплату и её динамику;
-- Список наиболее востребованных навыков;
-- Географию размещения вакансий (города). 
+Analytics for all vacancies and for each resource with vacancies:
+- Indicators of the total number of vacancies in the database, the total number of companies -
+employers;
+- List of current vacancies by specialty;
+- Dynamics of the number of vacancies;
+- Total number of June vacancies for the last 30 days, for the last week, for
+yesterday, today;
+- Top employer companies, top industries, top cities, top specialties
+by the number of vacancies;
+- Average salary and its dynamics;
+- List of the most in-demand skills;
+- Geography of vacancy placement (city).
 
-**Проект выполнен в DataLens:**
+**Project completed in DataLens:**
 
-Ссылка на проект - <https://datalens.yandex/mhagiprk7a9ib>
+Link to the project - <https://datalens.yandex/mhagiprk7a9ib>

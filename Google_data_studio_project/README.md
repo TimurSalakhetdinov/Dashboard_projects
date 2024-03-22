@@ -1,87 +1,87 @@
-# Создание дашборда продаж с возвратами
+# Creating a sales dashboard with returns
 
-**Цель проекта:** 
+**Objective of the project:**
 
-У команды продукта новая квартальная задача: работа с возвратами. Чтобы вы могли вывести аналитику возвратов в дашборды, команда IT выкатила в релизе новое поле в таблице с заказами (инвойсами) -- тип заказа (type). 
+The product team has a new quarterly task: working with returns. So that you can display returns analytics in dashboards, the IT team rolled out a new field in the table with orders (invoices) - order type (type).
 
-Теперь там есть не только приход (income), но и возвраты (refund). При этом возвратные инвойсы – это не статус старого заказа, а новые заказы, которые дважды в неделю добавляет вручную отдел продаж и теперь в дашбордах если просто выводить сумму по выручке без фильтра по типу заказа, то каждый заказ, по которому был проведен возврат, дублируется возвратным инвойсом и у каждого инвойса свой invoice_id.
+Now there is not only income, but also returns. At the same time, return invoices are not the status of an old order, but new orders, which are manually added by the sales department twice a week, and now in dashboards, if you simply display the amount of revenue without a filter by order type, then each order for which a return was made is duplicated return invoice and each invoice has its own invoice_id.
  
-**Исходные данные:**
+**Initial data:**
 
-Данные о продажах сохраняются в базе данных Google Cloud. Мы имеем доступ для подключения к базе через BigQuery.
+Sales data is stored in a Google Cloud database. We have access to connect to the database via BigQuery.
 
-Документация к БД - <https://docs.google.com/spreadsheets/d/1P4z7XRBUaK_1okHLudHi9YKmmThAqlOOMkGW9PYrDZg/edit?usp=share_link>
+Database documentation - <https://docs.google.com/spreadsheets/d/1P4z7XRBUaK_1okHLudHi9YKmmThAqlOOMkGW9PYrDZg/edit?usp=share_link>
 
-**Задача проекта:**
+**Project Objective:**
 
-Cобрать дашборд, который покажет продактам динамику и текущую ситуацию по возвратам в контексте общей ситуации по продуктам. 
+Collect a dashboard that will show products the dynamics and current situation regarding returns in the context of the general situation for products.
 
-Сумма возврата не всегда равна сумме платежа, так как в первичных оплатах мы удерживаем комиссию платежных систем, а в продлениях чаще всего возвращаем полную сумму.
+The refund amount is not always equal to the payment amount, since in initial payments we retain the commission of payment systems, and in renewals we most often return the full amount.
 
-**SQL запрос**
+**SQL query**
 
-Запрос для получения необходимых данных в BigQuery для проекта:
+Query to obtain the necessary data in BigQuery for a project:
 
 ```sql
 WITH Income_Refund AS (
- SELECT
-   product,
-   paid_date,
-   country,
-   payment_system,
-   SUM(CASE WHEN type = 'income' THEN paid_amount ELSE 0 END) AS total_income,
-   SUM(CASE WHEN type = 'refund' THEN paid_amount ELSE 0 END) AS total_refund
- FROM `takeclass-test.test.ff_sales_test`
- GROUP BY product, paid_date, country, payment_system
+  SELECT
+    product
+    paid_date,
+    country,
+    payment_system,
+    SUM(CASE WHEN type = 'income' THEN paid_amount ELSE 0 END) AS total_income,
+    SUM(CASE WHEN type = 'refund' THEN paid_amount ELSE 0 END) AS total_refund
+  FROM `takeclass-test.test.ff_sales_test`
+  GROUP BY product, paid_date, country, payment_system
 )
 SELECT
- product,
- paid_date,
- country,
- payment_system,
- total_income,
- total_refund,
- total_income - total_refund AS net_income
+  product
+  paid_date,
+  country,
+  payment_system,
+  total_income,
+  total_refund,
+  total_income - total_refund AS net_income
 FROM Income_Refund;
 ```
 
-**Проект выполнен в Google Data Studio:**
+**Project completed in Google Data Studio:**
 
-Ссылка на проект - <https://lookerstudio.google.com/reporting/793631d5-0da9-4246-9f09-fd7fcc2d0b2c>
+Link to the project - <https://lookerstudio.google.com/reporting/793631d5-0da9-4246-9f09-fd7fcc2d0b2c>
 
-**Компоненты:**
+**Components:**
 
-Фильтры: по валюте, продукту и датам платежей.
-Суммы возратов, выручки и чистого дохода за период.
-Линейный график временных рядов: отображает динамику доходов и возвратов с течением времени.
-Pie chart: показывает соотношение сумм возмещения по продуктам.
-Гистограмма: исследует эффективность различных платежных систем с точки зрения возвратов и доходов.
-Географическая тепловая карта: показаны страны, из которых происходит наибольшее количество возвратов.
-Таблица: отображает такие сведения, как выручка, возвраты и чистый доход по продуктам.
+Filters: by currency, product and payment dates.
+Amounts of returns, revenue and net income for the period.
+Time Series Line Graph: Displays the dynamics of earnings and returns over time.
+Pie chart: Shows the ratio of reimbursement amounts by product.
+Histogram: Explores the performance of various payment systems in terms of returns and revenue.
+Geographic heat map: Shows the countries from which the most returns originate.
+Table: Displays information such as revenue, returns, and net income by product.
 
-**Логика панели управления**
+**Control panel logic**
 
-Как посмотреть данные:
+How to view the data:
 
-- Выбрать валюту платежа из фильтра.
-- Сравнить тенденции доходов и возмещений, чтобы обнаружить аномалии.
-- Определить продукты, которые имеют высокое соотношение возврата к доходу требуют изучения.
+- Select payment currency from the filter.
+- Compare revenue and reimbursement trends to detect anomalies.
+- Identify products that have a high return-to-income ratio that require study.
 
-Ответы на вопросы:
+Answers on questions:
 
-- Каковы тенденции доходов и возмещений?
-- Какие продукты имеют наибольшее количество возвратов по отношению к доходу?
-- Каково географическое распределение возмещений?
+- What are the revenue and reimbursement trends?
+- Which products have the highest number of returns in relation to income?
+- What is the geographic distribution of reimbursements?
 
-Ограничения данных:
+Data Limitations:
 
-Возвраты добавляются вручную два раза в неделю, что может приводить к потенциальным задержкам в аналитике в реальном времени.
+Returns are manually added twice a week, which can result in potential delays in real-time analytics.
 
-**Запрос на улучшение данных:**
+**Data improvement request:**
 
-Для дальнейшего улучшения анализа необходимо попросить ИТ-команду добавить:
+To further improve the analysis, ask the IT team to add:
 
-- return_processing_date: дата фактической обработки возврата.
-- return_initiated_by: указывает, кто инициировал возврат средств: клиент или отдел продаж.
+- return_processing_date: date of actual processing of the return.
+- return_initiated_by: indicates who initiated the refund: the customer or the sales department.
 
-Используя дополнительные данные, можно будет эффективно анализировать динамику как доходов, так и возвратов, что важно для понимания финансового состояния продукта.
+Using additional data, it will be possible to effectively analyze the dynamics of both income and returns, which is important for understanding the financial condition of the product.

@@ -1,30 +1,30 @@
-# Анализ вакансий для аналитиков данных в LinkedIn
+# Job Analysis for Data Analysts on LinkedIn
 
-*Описание Проекта*
+*Project Description*
 
-- Провести анализ вакансий аналитиков данных в LinkedIn.
-- Проанализировать полученный CSV-файл с помощью BS 4.
-- Визуализировать информацию о рынке труда для аналитиков данных в Европе.
+- Conduct an analysis of data analyst vacancies on LinkedIn.
+- Analyze the resulting CSV file using BS 4.
+- Visualize job market information for data analysts in Europe.
 
-*Описание работы*
+*Description of work*
 
-Разработал решение для парсинга данных с сайта LinkedIn с помощью Selenium, преобразовал данные при помощи BeautifulSoup и подготовил их для визуализации, создал дашборд в Tableau, который помог определить навыки, пользующиеся спросом, и конкурентную среду в области Анализа данных.
+Developed a solution for scraping data from the LinkedIn website using Selenium, transformed the data using BeautifulSoup and prepared it for visualization, created a dashboard in Tableau that helped identify in-demand skills and the competitive landscape in the field of Data Analytics.
 
-Ссылка на дашборд: <https://public.tableau.com/shared/8BDS8T8BR?:display_count=n&:origin=viz_share_link>
+Dashboard link: <https://public.tableau.com/shared/8BDS8T8BR?:display_count=n&:origin=viz_share_link>
 
-*Навыки*
+*Skills*
 
-BeautifulSoup, Анализ данных, Tableau
+BeautifulSoup, Data Analysis, Tableau
 
-*Описание данных*
+*Description of data*
 
-- должность
-- город
-- страна
-- тип занятости (онлайн, гибрид, на месте)
-- компания
-- размер компании (количество сотрудников)
-- сфера деятельности компании
-- требуемые жесткие навыки
-- дата публикации вакансии
-- количество претендентов на вакансию
+- job title
+- city
+- a country
+- type of employment (online, hybrid, on-site)
+- company
+- company size (number of employees)
+- scope of the company
+- hard skills required
+- date of publication of the vacancy
+- number of applicants for the vacancy
